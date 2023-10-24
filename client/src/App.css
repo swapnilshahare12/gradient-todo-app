@@ -1,0 +1,236 @@
+.app {
+  /* display: block; */
+  min-width: 350px;
+  max-width: 400px;
+  /* border: 1px solid red; */
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+  padding: 3px;
+  color: #455963;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3);
+  font-size: 15px;
+  position: relative;
+  z-index: 20;
+  overflow: hidden;
+}
+
+.header-title {
+  font-size: 25px;
+  background: -webkit-linear-gradient(
+    115deg,
+    #4fcf70,
+    #fad648,
+    #a767e5,
+    #12bcfe,
+    #44ce7b
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app:before {
+  border-radius: 10px;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    #4fcf70,
+    #fad648,
+    #a767e5,
+    #12bcfe,
+    #44ce7b
+  );
+  background-size: 50% 100%;
+  z-index: -100;
+  animation: rainbow-bg 0.75s linear infinite;
+}
+
+header {
+  padding: 10px;
+  /* display: block;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 100%; */
+}
+
+@keyframes rainbow-bg {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+form {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+input[type="text"] {
+  display: block;
+  padding: 5px 0px;
+  width: 100%;
+  border: none;
+  border-bottom: 1.5px solid #e2e4ea;
+  font-weight: bold;
+  color: #455963;
+  /* width: calc(90% - 20px); */
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+button[type="submit"] {
+  display: flex;
+  background-image: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  ) !important;
+  padding: 5px 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border: none;
+  background-size: 300% 300%;
+  animation: animatedgradient 3s ease infinite alternate;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+button[type="submit"]:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  display: block;
+  background-color: white;
+  border-radius: 10px;
+  padding:10px 0;
+  width: 100%;
+}
+
+/* .todo-lists{
+  display: block;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 100%;
+} */
+.todo-lists {
+  margin-top: 15px;
+  /* padding: 10px 20px; */
+}
+
+.todo-lists ul {
+  list-style: none;
+}
+
+.todo-lists ul li {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: #edfaf6; */
+  /* border: 1px solid red; */
+  margin: 10px 0px;
+  padding: 10px;
+  border-bottom: 1.5px solid #e2e4ea;
+  border-top: 1.5px solid #e2e4ea;
+}
+.todo-lists ul li:hover {
+  background-color: #f6fbff;
+}
+
+.todo-lists ul li:last-child {
+  margin: 0px;
+  border-bottom: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.task-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.delete-icon {
+  color: #f44336;
+}
+
+input[type="checkbox"] {
+  border-radius: 50%;
+  background-color: red;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+h3 {
+  text-align: center;
+  font-size: 35px;
+  background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC  51%, #02AAB0  100%);
+  border-radius: 10px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1,
+.task-counts {
+  text-align: center;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid white;
+  /* border-left-color: #7983ff; */
+  border-left-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
